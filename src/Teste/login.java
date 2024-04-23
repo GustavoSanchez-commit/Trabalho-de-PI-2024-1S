@@ -33,7 +33,7 @@ public class login extends javax.swing.JFrame {
     // Informações de conexão com o banco de dados MySQL
     String url = "jdbc:mysql://localhost:3306/bancoPi";
     String usuarioBanco = "root";
-    String senhaBanco = "";
+    String senhaBanco = "2127";
 
     try {
         // Estabelecer conexão com o banco de dados
