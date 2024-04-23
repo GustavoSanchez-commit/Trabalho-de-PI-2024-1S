@@ -33,7 +33,7 @@ public class login extends javax.swing.JFrame {
     // Informações de conexão com o banco de dados MySQL
     String url = "jdbc:mysql://localhost:3306/bancoPi";
     String usuarioBanco = "root";
-    String senhaBanco = "2127";
+    String senhaBanco = "";
 
     try {
         // Estabelecer conexão com o banco de dados
@@ -133,7 +133,7 @@ public class login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("É um prazer tê-lo(a) aqui.");
+        jLabel4.setText("� um prazer t�-lo(a) aqui.");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 94, 420, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
@@ -222,12 +222,12 @@ public class login extends javax.swing.JFrame {
                 jLabel13MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 122, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 122, 20));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(199, 226, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel14.setText("Não tem conta?");
+        jLabel14.setText("N�o tem conta?");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 213, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 420, 440));
