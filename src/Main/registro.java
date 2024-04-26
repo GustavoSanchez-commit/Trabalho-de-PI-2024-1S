@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Main;
 
 import java.sql.Connection;
@@ -22,8 +18,8 @@ public class registro extends javax.swing.JFrame {
     
     private void inserirDados(String nome, String username, String senha) {
         // Informa√ß√µes de conex√£o com o banco de dados MySQL
-        String url = "jdbc:mysql://localhost:3306/bancoPi";
-        String usuarioBanco = "root";
+        String url = "jdbc:mysql://localhost:3306/bancoPi";//Coloque seu endereÁo do seu mysql e do seu database
+        String usuarioBanco = "root";//Coloque seu usuario do seu mysql
         String senhaBanco = "2127"; //Coloque a senha do seu mysql(Caso n„o tenha, deixe vazio)
 
         try {
@@ -253,15 +249,6 @@ public class registro extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new registro().setVisible(true);
