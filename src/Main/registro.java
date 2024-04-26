@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Teste;
+package Main;
 
-import Teste.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -25,7 +24,7 @@ public class registro extends javax.swing.JFrame {
         // Informações de conexão com o banco de dados MySQL
         String url = "jdbc:mysql://localhost:3306/bancoPi";
         String usuarioBanco = "root";
-        String senhaBanco = "";
+        String senhaBanco = "2127"; //Coloque a senha do seu mysql(Caso n�o tenha, deixe vazio)
 
         try {
             // Estabelecer conexão com o banco de dados
