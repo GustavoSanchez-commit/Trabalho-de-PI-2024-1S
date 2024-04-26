@@ -40,6 +40,7 @@ public class registro extends javax.swing.JFrame {
             pstmt.close();
             conexao.close();
             JOptionPane.showMessageDialog(null, "Registro com sucesso!");
+            new login().setVisible(true);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao se registrar! Tente novamente!");
             System.out.println("Erro ao se registrar: " + e.getMessage());

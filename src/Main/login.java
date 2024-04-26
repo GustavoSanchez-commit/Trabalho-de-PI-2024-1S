@@ -263,6 +263,8 @@ public class login extends javax.swing.JFrame {
 
     if (verificarLogin(username, senha)) {
         JOptionPane.showMessageDialog(null, "Login com sucesso!");
+        dispose();
+        new Main.Telas.TelaPrincipal().setVisible(true);
         // Faça o redirecionamento ou a ação necessária após o login bem-sucedido
     } else {
         System.out.println("Login falhou. Verifique seu nome de usuário e senha.");
