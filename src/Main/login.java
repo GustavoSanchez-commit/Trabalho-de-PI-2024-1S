@@ -45,7 +45,6 @@ public class login extends javax.swing.JFrame {
 
         return encontrado;
     } catch (SQLException e) {
-        System.out.println("Erro ao verificar login: " + e.getMessage());
         return false;
     }
 }
@@ -267,7 +266,7 @@ public class login extends javax.swing.JFrame {
         new Main.Telas.TelaPrincipal().setVisible(true);
         // Faça o redirecionamento ou a ação necessária após o login bem-sucedido
     } else {
-        System.out.println("Login falhou. Verifique seu nome de usuário e senha.");
+        JOptionPane.showMessageDialog(null, "Erro no login, Tente Novamente", "Error", JOptionPane.ERROR_MESSAGE);
         // Exiba uma mensagem de erro para o usuário
     }
     }//GEN-LAST:event_jButton2ActionPerformed
