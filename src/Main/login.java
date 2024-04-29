@@ -1,13 +1,6 @@
 package Main;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import java.awt.event.ActionEvent;
-import javax.swing.JPasswordField;
-import java.sql.ResultSet;
 
 public class login extends javax.swing.JFrame {
     public login() {
@@ -15,39 +8,6 @@ public class login extends javax.swing.JFrame {
         txtusername.setBackground(new java.awt.Color(0,0,0,1));
         txtpassword.setBackground(new java.awt.Color(0,0,0,1));
     }
-    
-    private boolean verificarLogin(String username, String senha) {
-    // Informações de conexão com o banco de dados MySQL
-    String url = "jdbc:mysql://localhost:3306/bancoPi";
-    String usuarioBanco = "root";
-    String senhaBanco = "2127";
-
-    try {
-        // Estabelecer conexão com o banco de dados
-        Connection conexao = DriverManager.getConnection(url, usuarioBanco, senhaBanco);
-
-        // Definir a instrução SQL para verificar o login
-        String sql = "SELECT * FROM listaUx WHERE username = ? AND senha = ?";
-        PreparedStatement pstmt = conexao.prepareStatement(sql);
-        pstmt.setString(1, username);
-        pstmt.setString(2, senha);
-
-        // Executar a consulta SQL
-        ResultSet rs = pstmt.executeQuery();
-
-        // Verificar se encontrou algum resultado
-        boolean encontrado = rs.next();
-
-        // Fechar a conexão com o banco de dados
-        rs.close();
-        pstmt.close();
-        conexao.close();
-
-        return encontrado;
-    } catch (SQLException e) {
-        return false;
-    }
-}
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -257,18 +217,18 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String username = txtusername.getText();
+         String username = txtusername.getText();
         String senha = new String(txtpassword.getPassword());
 
-    if (verificarLogin(username, senha)) {
-        JOptionPane.showMessageDialog(null, "Login com sucesso!");
-        dispose();
-        new Main.Telas.TelaPrincipal().setVisible(true);
-        // Faça o redirecionamento ou a ação necessária após o login bem-sucedido
-    } else {
-        JOptionPane.showMessageDialog(null, "Erro no login, Tente Novamente", "Error", JOptionPane.ERROR_MESSAGE);
-        // Exiba uma mensagem de erro para o usuário
-    }
+        if (VerificadorLogin.verificarLogin(username, senha)) {
+            JOptionPane.showMessageDialog(null, "Login com sucesso!");
+            dispose();
+            new Main.Telas.TelaPrincipal().setVisible(true);
+            // Fa�a o redirecionamento ou a a��o necess�ria ap�s o login bem-sucedido
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro no login, Tente Novamente", "Error", JOptionPane.ERROR_MESSAGE);
+            // Exiba uma mensagem de erro para o usu�rio
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {

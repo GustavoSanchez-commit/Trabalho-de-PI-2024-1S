@@ -1,10 +1,6 @@
 
 package Main;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class registro extends javax.swing.JFrame {
@@ -16,38 +12,6 @@ public class registro extends javax.swing.JFrame {
         CampoUsername.setBackground(new java.awt.Color(0,0,0,1));
     }
     
-    private void inserirDados(String nome, String username, String senha) {
-        // Informações de conexão com o banco de dados MySQL
-        String url = "jdbc:mysql://localhost:3306/bancoPi";//Coloque seu endere�o do seu mysql e do seu database
-        String usuarioBanco = "root";//Coloque seu usuario do seu mysql
-        String senhaBanco = "2127"; //Coloque a senha do seu mysql(Caso n�o tenha, deixe vazio)
-
-        try {
-            // Estabelecer conexão com o banco de dados
-            Connection conexao = DriverManager.getConnection(url, usuarioBanco, senhaBanco);
-
-            // Definir a instrução SQL para inserir os dados
-            String sql = "INSERT INTO listaUx (nome, username, senha) VALUES (?, ?, ?)";
-            PreparedStatement pstmt = conexao.prepareStatement(sql);
-            pstmt.setString(1, nome);
-            pstmt.setString(2, username);
-            pstmt.setString(3, senha);
-
-            // Executar a instrução SQL para inserir os dados
-            pstmt.executeUpdate();
-
-            // Fechar a conexão com o banco de dados
-            pstmt.close();
-            conexao.close();
-            JOptionPane.showMessageDialog(null, "Registro com sucesso!");
-            new login().setVisible(true);
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao se registrar! Tente novamente!", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("Erro ao se registrar: " + e.getMessage());
-        }
-    }
-
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -208,7 +172,7 @@ public class registro extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_campoSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -216,7 +180,10 @@ public class registro extends javax.swing.JFrame {
         String username = CampoUsername.getText();
         String senha = campoSenha.getText();
 
-        inserirDados(nome, username, senha);
+        Registros.registrarUsuario(nome, username, senha);
+        JOptionPane.showMessageDialog(null, "Registro com sucesso!");
+        dispose();
+        new login().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
