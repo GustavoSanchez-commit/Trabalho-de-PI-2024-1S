@@ -10,6 +10,7 @@ public class registro extends javax.swing.JFrame {
         campoSenha.setBackground(new java.awt.Color(0,0,0,1));
         CampoNome.setBackground(new java.awt.Color(0,0,0,1));
         CampoUsername.setBackground(new java.awt.Color(0,0,0,1));
+      
     }
     
     @SuppressWarnings("unchecked")
@@ -47,9 +48,9 @@ public class registro extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bg-login.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 35, 500, 340));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 500, 340));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 440));
 
         jPanel2.setBackground(new java.awt.Color(25, 118, 211));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -148,7 +149,7 @@ public class registro extends javax.swing.JFrame {
         jLabel10.setText("Username");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 420, 440));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 430, 440));
 
         setSize(new java.awt.Dimension(916, 438));
         setLocationRelativeTo(null);

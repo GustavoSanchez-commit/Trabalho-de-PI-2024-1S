@@ -17,7 +17,7 @@ public class Registros {
             Connection conexao = DriverManager.getConnection(url, usuarioBanco, senhaBanco); 
 
             // Definir os comandos SQL para inserir os dados
-            String sql = "INSERT INTO listaUx (nome, username, senha) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO tbusuario (nome, username, senha) VALUES (?, ?, ?)";
             PreparedStatement pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, nome);
             pstmt.setString(2, username);

@@ -16,7 +16,7 @@ public class VerificadorLogin {
         try {
             Connection conexao = DriverManager.getConnection(url, usuarioBanco, senhaBanco);
 
-            String sql = "SELECT * FROM listaUx WHERE username = ? AND senha = ?";
+            String sql = "SELECT * FROM tbusuario WHERE username = ? AND senha = ?";
             PreparedStatement pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, username);
             pstmt.setString(2, senha);
