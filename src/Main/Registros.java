@@ -1,36 +1,45 @@
 package Main;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import model.ModuloConexao;
 
 public class Registros {
-    private static final String url = "jdbc:mysql://localhost:3306/bancoPi"; // URL do seu banco de dados e sua database
-    private static final String usuarioBanco = "root"; // Coloque o seu usuário do seu banco de dados
-    private static final String senhaBanco = "2127"; // Coloque sua senha do seu banco de dados
-
     public static void registrarUsuario(String nome, String username, String senha) {
+        Connection conexao = null;
+        PreparedStatement pstmt = null;
+        
         try {
-            // Criar conexão com o banco de dados
-            Connection conexao = DriverManager.getConnection(url, usuarioBanco, senhaBanco); 
+            conexao = ModuloConexao.conectar();
 
-            // Definir os comandos SQL para inserir os dados, incluindo o perfil padrão 'usuario'
             String sql = "INSERT INTO tbusuario (nome, username, senha, perfil) VALUES (?, ?, ?, ?)";
-            PreparedStatement pstmt = conexao.prepareStatement(sql);
+            pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, nome);
             pstmt.setString(2, username);
             pstmt.setString(3, senha);
-            pstmt.setString(4, "usuario"); // Defina o perfil padrão como 'usuario'
+            pstmt.setString(4, "usuario");
             pstmt.executeUpdate();
             
-            // Fechar o envio de dados 
-            pstmt.close();
-            conexao.close();
-            
+            JOptionPane.showMessageDialog(null, "Usuário registrado com sucesso.");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro no registro, Tente Novamente: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conexao != null) {
+                try {
+                    conexao.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }
