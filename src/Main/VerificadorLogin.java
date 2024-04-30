@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.ModuloConexao;
 
+
 public class VerificadorLogin {
     
     public static boolean verificarLogin(String username, String senha) {
@@ -21,32 +22,30 @@ public class VerificadorLogin {
             pstmt.setString(1, username);
             pstmt.setString(2, senha);
             rs = pstmt.executeQuery();
+            
+            // Verifica se há um próximo registro no ResultSet
+            boolean encontrado = rs.next();
+            
+            // Se encontrado for verdadeiro, significa que o login foi bem-sucedido
+            if(encontrado){
+                String perfil = rs.getString(5);
+                if(perfil.equals("usuario")){
+                    System.out.println(rs.getString(2));
+                }
+            }
 
-            return rs.next();
+            return encontrado;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         } finally {
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (pstmt != null) {
-                try {
-                    pstmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (conexao != null) {
-                try {
-                    conexao.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+            // Se ocorrer alguma exceção ou não, garanta que os recursos sejam fechados
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conexao != null) conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
