@@ -229,7 +229,7 @@ public class registro extends javax.swing.JFrame {
     private javax.swing.JTextField CampoNome;
     private javax.swing.JTextField CampoUsername;
     private javax.swing.JTextField campoSenha;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;

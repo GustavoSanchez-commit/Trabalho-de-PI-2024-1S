@@ -16,13 +16,15 @@ public class Registros {
             // Criar conexão com o banco de dados
             Connection conexao = DriverManager.getConnection(url, usuarioBanco, senhaBanco); 
 
-            // Definir os comandos SQL para inserir os dados
-            String sql = "INSERT INTO tbusuario (nome, username, senha) VALUES (?, ?, ?)";
+            // Definir os comandos SQL para inserir os dados, incluindo o perfil padrão 'usuario'
+            String sql = "INSERT INTO tbusuario (nome, username, senha, perfil) VALUES (?, ?, ?, ?)";
             PreparedStatement pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, nome);
             pstmt.setString(2, username);
             pstmt.setString(3, senha);
+            pstmt.setString(4, "usuario"); // Defina o perfil padrão como 'usuario'
             pstmt.executeUpdate();
+            
             // Fechar o envio de dados 
             pstmt.close();
             conexao.close();
