@@ -10,10 +10,8 @@ public class Registros {
     public static void registrarUsuario(String nome, String username, String senha) {
         Connection conexao = null;
         PreparedStatement pstmt = null;
-        
         try {
             conexao = ModuloConexao.conectar();
-
             String sql = "INSERT INTO tbusuario (nome, username, senha, perfil) VALUES (?, ?, ?, ?)";
             pstmt = conexao.prepareStatement(sql);
             pstmt.setString(1, nome);
@@ -21,8 +19,6 @@ public class Registros {
             pstmt.setString(3, senha);
             pstmt.setString(4, "usuario");
             pstmt.executeUpdate();
-            
-            JOptionPane.showMessageDialog(null, "Usuário registrado com sucesso.");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro no registro, Tente Novamente: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
