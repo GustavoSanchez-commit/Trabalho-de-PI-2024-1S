@@ -10,14 +10,16 @@ public class Jogos {
     private String estadio;
     private String timeCasa;
     private String timeVisitante;
+    private String campeonato;
 
-    public Jogos(LocalDate data, LocalTime horario, String preco, String estadio, String timeCasa, String timeVisitante) {
+    public Jogos(LocalDate data, LocalTime horario, String campeonato, String preco, String estadio, String timeCasa, String timeVisitante) {
         this.data = data;
         this.horario = horario;
         this.preco = preco;
         this.estadio = estadio;
         this.timeCasa = timeCasa;
         this.timeVisitante = timeVisitante;
+        this.campeonato = campeonato;
     }
     public LocalDate getData() {
         return data;
@@ -65,5 +67,13 @@ public class Jogos {
 
     public void setTimeVisitante(String timeVisitante) {
         this.timeVisitante = timeVisitante;
+    }
+
+    public String getCampeonato() {
+        return campeonato;
+    }
+
+    public void setCampeonato(String campeonato) {
+        this.campeonato = campeonato;
     }
 }
