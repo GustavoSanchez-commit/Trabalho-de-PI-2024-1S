@@ -4,16 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import model.ModuloConexao;
 
-
 public class VerificadorLogin {
-    
+
     public static boolean verificarLogin(String username, String senha) {
         Connection conexao = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        
+
         try {
             conexao = ModuloConexao.conectar();
 
@@ -22,16 +22,18 @@ public class VerificadorLogin {
             pstmt.setString(1, username);
             pstmt.setString(2, senha);
             rs = pstmt.executeQuery();
-            
+
             // Verifica se há um próximo registro no ResultSet
             boolean encontrado = rs.next();
-            
+
             // Se encontrado for verdadeiro, significa que o login foi bem-sucedido
-            if(encontrado){
+            if (encontrado) {
                 String perfil = rs.getString(5);
-                if(perfil.equals("usuario")){
-                    System.out.println(rs.getString(2));
+                if (perfil.equals("usuario")) { 
+                    JOptionPane.showMessageDialog(null, "Bem-vindo, " + rs.getString(2), "Login Bem-Sucedido", JOptionPane.INFORMATION_MESSAGE);
                 }
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não encontrado ou senha incorreta.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
             }
 
             return encontrado;
@@ -41,9 +43,15 @@ public class VerificadorLogin {
         } finally {
             // Se ocorrer alguma exceção ou não, garanta que os recursos sejam fechados
             try {
-                if (rs != null) rs.close();
-                if (pstmt != null) pstmt.close();
-                if (conexao != null) conexao.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }

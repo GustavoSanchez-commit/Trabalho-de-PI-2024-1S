@@ -221,14 +221,10 @@ public class login extends javax.swing.JFrame {
         String senha = new String(txtpassword.getPassword());
 
         if (VerificadorLogin.verificarLogin(username, senha)) {
-            JOptionPane.showMessageDialog(null, "Login com sucesso!");
             dispose();
             new Main.Telas.TelaPrincipal().setVisible(true);
             // Faça o redirecionamento ou a ação necessária após o login bem-sucedido
-        } else {
-            JOptionPane.showMessageDialog(null, "Erro no login, Tente Novamente", "Error", JOptionPane.ERROR_MESSAGE);
-            // Exiba uma mensagem de erro para o usuário
-        }
+        } 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
