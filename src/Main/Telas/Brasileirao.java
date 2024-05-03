@@ -271,7 +271,7 @@ public class Brasileirao extends javax.swing.JFrame {
 
     private void btnjg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg2ActionPerformed
         String[] opcoes = {"Pix", "Cartão", "Boleto"};
-        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$180,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$120,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
         if (opcaoSelecionada != null) {
             LocalDate data = LocalDate.of(2024, 6, 5);
             LocalTime horario = LocalTime.of(16, 0);
