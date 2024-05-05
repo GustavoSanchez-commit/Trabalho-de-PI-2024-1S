@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.ModuloConexao;
-
+    
 public class VerificadorLogin {
 
     public static ResultadoLogin verificarLogin(String username, String senha) {
