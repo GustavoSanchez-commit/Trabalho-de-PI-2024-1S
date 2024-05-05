@@ -217,14 +217,19 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         String username = txtusername.getText();
+        String username = txtusername.getText();
         String senha = new String(txtpassword.getPassword());
 
-        if (VerificadorLogin.verificarLogin(username, senha)) {
+        ResultadoLogin resultadoLogin = VerificadorLogin.verificarLogin(username, senha);
+
+        if (resultadoLogin.isSucesso()) {
             dispose();
             new Main.Telas.TelaPrincipal().setVisible(true);
             // Faça o redirecionamento ou a ação necessária após o login bem-sucedido
-        } 
+        } else {
+            // Se o login não foi bem-sucedido, você pode exibir uma mensagem de erro
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado ou senha incorreta.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {

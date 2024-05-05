@@ -9,7 +9,7 @@ import model.ModuloConexao;
 
 public class VerificadorLogin {
 
-    public static boolean verificarLogin(String username, String senha) {
+    public static ResultadoLogin verificarLogin(String username, String senha) {
         Connection conexao = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -31,15 +31,13 @@ public class VerificadorLogin {
                 String perfil = rs.getString(5);
                 if (perfil.equals("usuario")) { 
                     JOptionPane.showMessageDialog(null, "Bem-vindo, " + rs.getString(2), "Login Bem-Sucedido", JOptionPane.INFORMATION_MESSAGE);
+                    return new ResultadoLogin(true, rs.getInt(1)); // Retorna o ID do usuário
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado ou senha incorreta.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
             }
-
-            return encontrado;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         } finally {
             // Se ocorrer alguma exceção ou não, garanta que os recursos sejam fechados
             try {
@@ -56,5 +54,25 @@ public class VerificadorLogin {
                 e.printStackTrace();
             }
         }
+        
+        return new ResultadoLogin(false, -1); // Retorna um resultado de login inválido
+    }
+}
+
+class ResultadoLogin {
+    private boolean sucesso;
+    private int idUsuario;
+
+    public ResultadoLogin(boolean sucesso, int idUsuario) {
+        this.sucesso = sucesso;
+        this.idUsuario = idUsuario;
+    }
+
+    public boolean isSucesso() {
+        return sucesso;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
     }
 }
