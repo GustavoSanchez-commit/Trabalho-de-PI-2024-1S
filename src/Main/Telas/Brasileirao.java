@@ -260,7 +260,7 @@ public class Brasileirao extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 22);
             LocalTime horario = LocalTime.of(18, 0);
             Jogos jogo1 = new Jogos(data, horario, "Brasileirão", "R$180", "Allianz Parque", "Palmeiras", "Corinthians");
-            int idUsuario = 1;
+            int idUsuario = 2;
 
             if (ConexaoBD.inserirJogo(jogo1, idUsuario)) {
                 JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
@@ -277,7 +277,7 @@ public class Brasileirao extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 5);
             LocalTime horario = LocalTime.of(16, 0);
             Jogos jogo2 = new Jogos(data, horario, "Brasileirão", "R$120", "Neo Química Arena", "Corinthians", "Fortaleza");
-            int idUsuario = 1;
+            int idUsuario = 2;
 
             if (ConexaoBD.inserirJogo(jogo2, idUsuario)) {
                 JOptionPane.showMessageDialog(null, "Pagamento Concluído. Verifique seu ingresso em 'Seus ingressos'");
