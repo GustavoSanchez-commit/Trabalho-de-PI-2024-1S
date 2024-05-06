@@ -31,7 +31,9 @@ public class VerificadorLogin {
                 String perfil = rs.getString(5);
                 if (perfil.equals("usuario")) { 
                     JOptionPane.showMessageDialog(null, "Bem-vindo, " + rs.getString(2), "Login Bem-Sucedido", JOptionPane.INFORMATION_MESSAGE);
-                    return new ResultadoLogin(true, rs.getInt(1)); // Retorna o ID do usuário
+                    System.out.println(rs.getInt(1));
+                    return new ResultadoLogin(true, rs.getInt(1));
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado ou senha incorreta.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
@@ -74,5 +76,13 @@ class ResultadoLogin {
 
     public int getIdUsuario() {
         return idUsuario;
+    }
+
+    public void setSucesso(boolean sucesso) {
+        this.sucesso = sucesso;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

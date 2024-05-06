@@ -1,10 +1,112 @@
 package Main.Telas;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.ModuloConexao;
+
 public class TelaSuaConta extends javax.swing.JFrame {
 
     public TelaSuaConta() {
-        initComponents(); 
+        initComponents();
+        carregarDadosUsuario(1);
+        carregarHistoricoIngressos(1);
+        
     }
+
+    private void carregarDadosUsuario(int idUsuario) {
+        Connection conexao = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conexao = ModuloConexao.conectar();
+
+            String sql = "SELECT nome, username, senha FROM tbusuario WHERE id = ?";
+            pstmt = conexao.prepareStatement(sql);
+            pstmt.setInt(1, idUsuario);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                String nome = rs.getString("nome");
+                String username = rs.getString("username");
+                String senha = rs.getString("senha");
+
+                // Define os valores nos componentes da tela
+                SeuNome.setText(nome);
+                SeuUsername.setText(username);
+                SuaSenha.setText(senha);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Se ocorrer alguma exceção ou não, garanta que os recursos sejam fechados
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    private void carregarHistoricoIngressos(int idUsuario) {
+        Connection conexao = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conexao = ModuloConexao.conectar();
+
+            String sql = "SELECT j.data, j.horario, j.campeonato, j.estadio, j.time_casa, j.time_visitante FROM historico_ingressos h JOIN jogos_brasileirao j ON h.id_jogo = j.id WHERE h.id_usuario = ?";
+            pstmt = conexao.prepareStatement(sql);
+            pstmt.setInt(1, idUsuario);
+            rs = pstmt.executeQuery();
+
+            DefaultTableModel model = (DefaultTableModel) tabelaHistorico.getModel();
+            model.setRowCount(0);
+
+            while (rs.next()) {
+                Object[] row = {
+                    rs.getDate("data"),
+                    rs.getTime("horario"),
+                    rs.getString("campeonato"),
+                    rs.getString("estadio"),
+                    rs.getString("time_casa"),
+                    rs.getString("time_visitante")
+                };
+                model.addRow(row);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Se ocorrer alguma exceção ou não, garanta que os recursos sejam fechados
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -17,10 +119,11 @@ public class TelaSuaConta extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         SeuUsername = new javax.swing.JLabel();
         SeuNome = new javax.swing.JLabel();
         SuaSenha = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaHistorico = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -62,18 +165,6 @@ public class TelaSuaConta extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         jLabel7.setText("Senha :");
 
-        jLabel8.setBackground(new java.awt.Color(102, 255, 102));
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Historico de Ingressos");
-        jLabel8.setOpaque(true);
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
-            }
-        });
-
         SeuUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         SeuUsername.setText("Seu Username");
 
@@ -83,15 +174,25 @@ public class TelaSuaConta extends javax.swing.JFrame {
         SuaSenha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         SuaSenha.setText("Sua Senha");
 
+        tabelaHistorico.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Data", "Horario", "Campeonato", "Estadio", "Time Casa", "Time Visitante"
+            }
+        ));
+        jScrollPane1.setViewportView(tabelaHistorico);
+
         jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SeuUsername, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SeuNome, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(SuaSenha, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -101,25 +202,28 @@ public class TelaSuaConta extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(SeuNome))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(SeuNome))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(SeuUsername))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(SuaSenha)))
+                        .addContainerGap())
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(SeuUsername))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(SuaSenha)))
-                .addContainerGap(421, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addGap(0, 469, Short.MAX_VALUE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(0, 576, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +231,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SeuNome))
@@ -139,9 +243,9 @@ public class TelaSuaConta extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(SuaSenha))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -211,11 +315,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
         dispose();
         new TelaPrincipal().setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        
-    }//GEN-LAST:event_jLabel8MouseClicked
-
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -260,8 +360,9 @@ public class TelaSuaConta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabelaHistorico;
     // End of variables declaration//GEN-END:variables
 }
