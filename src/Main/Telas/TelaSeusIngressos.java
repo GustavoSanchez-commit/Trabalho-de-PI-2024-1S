@@ -1,5 +1,6 @@
 package Main.Telas;
 
+import Main.VerificadorLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,10 +11,12 @@ import javax.swing.table.DefaultTableModel;
 import model.ModuloConexao;
 
 public class TelaSeusIngressos extends javax.swing.JFrame {
+    
+    int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
 
     public TelaSeusIngressos() {
         initComponents();
-        mostrarIngressos(1);
+        mostrarIngressos(idUsuario);
     }
 
     public void mostrarIngressos(int idUsuario) {

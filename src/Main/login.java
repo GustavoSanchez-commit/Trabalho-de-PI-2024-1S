@@ -1,14 +1,16 @@
 package Main;
 
 import javax.swing.JOptionPane;
+import model.Usuario;
 
 public class login extends javax.swing.JFrame {
+
     public login() {
         initComponents();
-        txtusername.setBackground(new java.awt.Color(0,0,0,1));
-        txtpassword.setBackground(new java.awt.Color(0,0,0,1));
+        txtusername.setBackground(new java.awt.Color(0, 0, 0, 1));
+        txtpassword.setBackground(new java.awt.Color(0, 0, 0, 1));
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -183,7 +185,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void disableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_disableMouseClicked
-        txtpassword.setEchoChar((char)0);
+        txtpassword.setEchoChar((char) 0);
         disable.setVisible(false);
         disable.setEnabled(false);
         show.setEnabled(true);
@@ -191,7 +193,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_disableMouseClicked
 
     private void showMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMouseClicked
-        txtpassword.setEchoChar((char)8226);
+        txtpassword.setEchoChar((char) 8226);
         disable.setVisible(true);
         disable.setEnabled(true);
         show.setEnabled(false);
@@ -199,14 +201,14 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_showMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        for (double i = 0.0; i <=1.0; i = i+0.1){
-            String val = i+ "";
+        for (double i = 0.0; i <= 1.0; i = i + 0.1) {
+            String val = i + "";
             float f = Float.valueOf(val);
             this.setOpacity(f);
-            try{
+            try {
                 Thread.sleep(50);
-            }catch(Exception e){
-                
+            } catch (Exception e) {
+
             }
         }
     }//GEN-LAST:event_formWindowOpened
@@ -220,9 +222,9 @@ public class login extends javax.swing.JFrame {
         String username = txtusername.getText();
         String senha = new String(txtpassword.getPassword());
 
-        ResultadoLogin resultadoLogin = VerificadorLogin.verificarLogin(username, senha);
+        VerificadorLogin.verificarLogin(username, senha);
 
-        if (resultadoLogin.isSucesso()) {
+        if (VerificadorLogin.getUsuarioLogado() != null) {
             dispose();
             new Main.Telas.TelaPrincipal().setVisible(true);
             // Faça o redirecionamento ou a ação necessária após o login bem-sucedido

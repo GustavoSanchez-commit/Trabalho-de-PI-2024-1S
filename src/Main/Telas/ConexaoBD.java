@@ -11,7 +11,7 @@ import model.ModuloConexao;
 
 public class ConexaoBD {
     
-    public static boolean inserirJogo(Jogos jogo, int idUsuario) { // Adicionando idUsuario como parâmetro
+    public static boolean inserirJogo(Jogos jogo, int idUsuario) throws SQLException { // Adicionando idUsuario como parâmetro
         Connection conexao = ModuloConexao.conectar();
         if (conexao == null) {
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -55,7 +55,7 @@ public class ConexaoBD {
         }
     }
     
-    private static boolean adicionarAoHistorico(int idUsuario, int idJogo) {
+    private static boolean adicionarAoHistorico(int idUsuario, int idJogo) throws SQLException {
         Connection conexao = ModuloConexao.conectar();
         if (conexao == null) {
             return false;

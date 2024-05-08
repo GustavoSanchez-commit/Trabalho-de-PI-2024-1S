@@ -1,22 +1,15 @@
-
 package model;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ModuloConexao {
-    public static Connection conectar() {
-        Connection conexao;
-        String driver = "com.mysql.cj.jdbc.Driver";
+    public static Connection conectar() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/bancoPi";
-        String user = "root";
-        String password = "2127";
-        try {
-            Class.forName(driver);
-            conexao = DriverManager.getConnection(url, user, password);
-            return conexao;
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println(e);
-            return null;
-        }
+        String usuario = "root";
+        String senha = "2127";
+
+        return DriverManager.getConnection(url, usuario, senha);
     }
 }

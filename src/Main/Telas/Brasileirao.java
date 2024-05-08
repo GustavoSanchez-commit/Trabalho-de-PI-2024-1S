@@ -3,9 +3,14 @@ package Main.Telas;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import javax.swing.JOptionPane;
-import model.ModuloConexao;
+import Main.VerificadorLogin;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Usuario;
 
 public class Brasileirao extends javax.swing.JFrame {
+
     public Brasileirao() {
         initComponents();
     }
@@ -260,12 +265,19 @@ public class Brasileirao extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 22);
             LocalTime horario = LocalTime.of(18, 0);
             Jogos jogo1 = new Jogos(data, horario, "Brasileirão", "R$180", "Allianz Parque", "Palmeiras", "Corinthians");
-            int idUsuario = 2;
 
-            if (ConexaoBD.inserirJogo(jogo1, idUsuario)) {
-                JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-            } else {
-                JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+            // Obtém o ID do usuário logado
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+            
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo1, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_btnjg1ActionPerformed
@@ -277,12 +289,16 @@ public class Brasileirao extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 5);
             LocalTime horario = LocalTime.of(16, 0);
             Jogos jogo2 = new Jogos(data, horario, "Brasileirão", "R$120", "Neo Química Arena", "Corinthians", "Fortaleza");
-            int idUsuario = 2;
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
 
-            if (ConexaoBD.inserirJogo(jogo2, idUsuario)) {
-                JOptionPane.showMessageDialog(null, "Pagamento Concluído. Verifique seu ingresso em 'Seus ingressos'");
-            } else {
-                JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+            try {
+                if (ConexaoBD.inserirJogo(jogo2, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído. Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_btnjg2ActionPerformed
