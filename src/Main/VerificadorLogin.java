@@ -67,7 +67,6 @@ public class VerificadorLogin {
         return usuarioLogado;
     }
 
-  
     public static void setUsuarioLogado(Usuario aUsuarioLogado) {
         usuarioLogado = aUsuarioLogado;
     }

@@ -227,11 +227,7 @@ public class login extends javax.swing.JFrame {
         if (VerificadorLogin.getUsuarioLogado() != null) {
             dispose();
             new Main.Telas.TelaPrincipal().setVisible(true);
-            // Faça o redirecionamento ou a ação necessária após o login bem-sucedido
-        } else {
-            // Se o login não foi bem-sucedido, você pode exibir uma mensagem de erro
-            JOptionPane.showMessageDialog(null, "Usuário não encontrado ou senha incorreta.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
-        }
+        } 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
