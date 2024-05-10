@@ -1,6 +1,6 @@
 create database bancoPi;
 use bancoPi;
-CREATE DATABASE bancoPi;
+
 CREATE TABLE tbusuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(70) NOT NULL, 
@@ -30,7 +30,6 @@ CREATE TABLE historico_ingressos (
 );
 
 
-
-	select * from jogos_brasileirao;
-	select * from tbusuario;
-	select * from historico_ingressos;
+select * from jogos_brasileirao;
+select * from tbusuario;
+select * from historico_ingressos;
