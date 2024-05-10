@@ -6,7 +6,7 @@ O projeto destina-se a criar uma plataforma de compra de ingressos para jogos de
 
 -JDK Development Kit downloads 
 -MySQL Server e Workbench 
--Driver JDBC para MySQL --->Independente de plataforma (https://dev.mysql.com/downloads/connector/j/)
+-Driver JDBC para MySQL(A Pasta já esta dentro da pasta deste repositorio, mas caso queira baxar segue o link) --->Independente de plataforma (https://dev.mysql.com/downloads/connector/j/)
 -Usar o script SQL que está dentro da pasta do codigo fonte.
 
 # Objetivo
