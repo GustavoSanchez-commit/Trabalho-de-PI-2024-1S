@@ -304,19 +304,87 @@ public class Brasileirao extends javax.swing.JFrame {
     }//GEN-LAST:event_btnjg2ActionPerformed
 
     private void btnjg3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg3ActionPerformed
-        // TODO add your handling code here:
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$80,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 6, 28);
+            LocalTime horario = LocalTime.of(18, 30);
+            Jogos jogo3 = new Jogos(data, horario, "Brasileirão", "R$80", "Arena do Grêmio", "Grêmio", "Chapecoense");
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo3, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído. Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnjg3ActionPerformed
 
     private void btnjg4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg4ActionPerformed
-        // TODO add your handling code here:
+         String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$140,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 7, 2);
+            LocalTime horario = LocalTime.of(16, 30);
+            Jogos jogo4 = new Jogos(data, horario, "Brasileirão", "R$140", "Morumbis", "São Paulo", "Flamengo");
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo4, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído. Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnjg4ActionPerformed
 
     private void btnjg5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg5ActionPerformed
-        // TODO add your handling code here:
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$100,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 6, 28);
+            LocalTime horario = LocalTime.of(18, 30);
+            Jogos jogo5 = new Jogos(data, horario, "Brasileirão", "R$100", "Morumbis", "São Paulo", "Bragantino");
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo5, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído. Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnjg5ActionPerformed
 
     private void btnjg6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg6ActionPerformed
-        // TODO add your handling code here:
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$90,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 7, 15);
+            LocalTime horario = LocalTime.of(20, 00);
+            Jogos jogo6 = new Jogos(data, horario, "Brasileirão", "R$90", "Arena MRV", "Atlético Mineiro", "Athletico Paranaense");
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo6, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído. Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnjg6ActionPerformed
 
     /**
