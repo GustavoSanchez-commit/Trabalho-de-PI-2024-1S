@@ -9,7 +9,7 @@ CREATE TABLE tbusuario (
     perfil VARCHAR(20) DEFAULT 'usuario' NOT NULL
 );
 
-CREATE TABLE jogos_brasileirao (
+CREATE TABLE jogos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     data DATE,
     horario TIME,
@@ -26,10 +26,9 @@ CREATE TABLE historico_ingressos (
     id_jogo INT,
     data_compra DATE,
     FOREIGN KEY (id_usuario) REFERENCES tbusuario(id),
-    FOREIGN KEY (id_jogo) REFERENCES jogos_brasileirao(id)
+    FOREIGN KEY (id_jogo) REFERENCES jogos(id)
 );
 
-
-select * from jogos_brasileirao;
+select * from jogos;
 select * from tbusuario;
 select * from historico_ingressos;

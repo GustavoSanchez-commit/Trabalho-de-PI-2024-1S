@@ -71,7 +71,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
         try {
             conexao = ModuloConexao.conectar();
 
-            String sql = "SELECT j.data, j.horario, j.campeonato, j.estadio, j.time_casa, j.time_visitante FROM historico_ingressos h JOIN jogos_brasileirao j ON h.id_jogo = j.id WHERE h.id_usuario = ?";
+            String sql = "SELECT j.data, j.horario, j.campeonato, j.estadio, j.time_casa, j.time_visitante FROM historico_ingressos h JOIN jogos j ON h.id_jogo = j.id WHERE h.id_usuario = ?";
             pstmt = conexao.prepareStatement(sql);
             pstmt.setInt(1, idUsuario);
             rs = pstmt.executeQuery();

@@ -21,7 +21,7 @@ public class ConexaoBD {
         String dataString = jogo.getData().toString();
         String horarioString = jogo.getHorario().toString();
             
-        String sql = "INSERT INTO jogos_brasileirao (data, horario, campeonato, preco, estadio, time_casa, time_visitante) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO jogos(data, horario, campeonato, preco, estadio, time_casa, time_visitante) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, dataString);
             pstmt.setString(2, horarioString);

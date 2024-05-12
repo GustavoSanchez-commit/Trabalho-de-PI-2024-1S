@@ -30,7 +30,7 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         try {
             conexao = ModuloConexao.conectar();
 
-            String sql = "SELECT j.time_casa, j.time_visitante, j.estadio, j.campeonato, j.data, j.horario, j.preco FROM jogos_brasileirao j "
+            String sql = "SELECT j.time_casa, j.time_visitante, j.estadio, j.campeonato, j.data, j.horario, j.preco FROM jogos j "
                        + "JOIN historico_ingressos h ON j.id = h.id_jogo "
                        + "WHERE h.id_usuario = ? AND j.data >= ?";
             pstmt = conexao.prepareStatement(sql);
