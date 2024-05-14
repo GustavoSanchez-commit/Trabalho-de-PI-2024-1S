@@ -156,8 +156,10 @@ public class TelaEscolherCampeonato extends javax.swing.JFrame {
        }else if(selectedCampeonato.equalsIgnoreCase("Libertadores")){
            dispose();
            new Libertadores().setVisible(true);
+       }else if(selectedCampeonato.equalsIgnoreCase("Copa do Brasil")){
+           dispose();
+           new CopaDoBrasil().setVisible(true);
        }
-      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
