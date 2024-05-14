@@ -10,14 +10,14 @@ import javax.swing.table.DefaultTableModel;
 import model.ModuloConexao;
 
 public class TelaSuaConta extends javax.swing.JFrame {
-    
+
     int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
 
     public TelaSuaConta() {
         initComponents();
         carregarDadosUsuario(idUsuario);
         carregarHistoricoIngressos(idUsuario);
-        
+
     }
 
     private void carregarDadosUsuario(int idUsuario) {
@@ -62,7 +62,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
             }
         }
     }
-    
+
     private void carregarHistoricoIngressos(int idUsuario) {
         Connection conexao = null;
         PreparedStatement pstmt = null;
@@ -109,7 +109,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
             }
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -128,6 +128,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaHistorico = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -188,9 +189,19 @@ public class TelaSuaConta extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelaHistorico);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Segoe UI Emoji", 2, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Seus ultimos ingressos com a IngressosExpress");
+
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Alterar Senha?");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -202,6 +213,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
         jDesktopPane1.setLayer(SuaSenha, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -219,14 +231,16 @@ public class TelaSuaConta extends javax.swing.JFrame {
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(SeuUsername))
+                                .addComponent(SeuUsername)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(SuaSenha)))
-                        .addContainerGap())
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(SuaSenha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addGap(0, 576, Short.MAX_VALUE)
@@ -234,7 +248,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(203, 203, 203)
+                .addGap(160, 160, 160)
                 .addComponent(jLabel8)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -252,15 +266,16 @@ public class TelaSuaConta extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SeuUsername))
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(SuaSenha))
+                    .addComponent(SuaSenha)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -330,7 +345,49 @@ public class TelaSuaConta extends javax.swing.JFrame {
         dispose();
         new TelaPrincipal().setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
-   
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String senhaAntiga = JOptionPane.showInputDialog(null, "Digite sua senha antiga:");
+
+        if (senhaAntiga.equals(SuaSenha.getText())) {
+            String senhaNova = JOptionPane.showInputDialog(null, "Digite sua nova senha:");
+            atualizarSenhaUsuario(idUsuario, senhaNova);
+            SuaSenha.setText(senhaNova);
+            JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Senha antiga incorreta. Tente novamente.");
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void atualizarSenhaUsuario(int idUsuario, String senhaNova) {
+        Connection conexao = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conexao = ModuloConexao.conectar();
+
+            String sql = "UPDATE tbusuario SET senha = ? WHERE id = ?";
+            pstmt = conexao.prepareStatement(sql);
+            pstmt.setString(1, senhaNova);
+            pstmt.setInt(2, idUsuario);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -367,6 +424,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
     private javax.swing.JLabel SeuNome;
     private javax.swing.JLabel SeuUsername;
     private javax.swing.JLabel SuaSenha;
+    private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
