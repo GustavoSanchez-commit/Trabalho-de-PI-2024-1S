@@ -128,6 +128,11 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         jLabel1.setText("Seus ingressos dos próximos jogos");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -225,6 +230,10 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         dispose();
         new TelaEscolherCampeonato().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
