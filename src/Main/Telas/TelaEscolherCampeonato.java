@@ -54,7 +54,7 @@ public class TelaEscolherCampeonato extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setMaximumRowCount(20);
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brasileirão", "Libertadores", "Copa do Brasil" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brasileirão", "Libertadores", "Copa América" }));
         jComboBox1.setBorder(null);
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -156,9 +156,9 @@ public class TelaEscolherCampeonato extends javax.swing.JFrame {
        }else if(selectedCampeonato.equalsIgnoreCase("Libertadores")){
            dispose();
            new Libertadores().setVisible(true);
-       }else if(selectedCampeonato.equalsIgnoreCase("Copa do Brasil")){
+       }else if(selectedCampeonato.equalsIgnoreCase("Copa América")){
            dispose();
-           new CopaDoBrasil().setVisible(true);
+           new CopaAmerica().setVisible(true);
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 

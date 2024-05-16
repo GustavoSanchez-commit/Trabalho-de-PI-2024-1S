@@ -233,7 +233,7 @@ public class Libertadores extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
             }
         }   
     }//GEN-LAST:event_btnjg1ActionPerformed
@@ -263,7 +263,7 @@ public class Libertadores extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
     }//GEN-LAST:event_btnjg2ActionPerformed
@@ -284,7 +284,7 @@ public class Libertadores extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
     }//GEN-LAST:event_btnjg3ActionPerformed
@@ -305,7 +305,7 @@ public class Libertadores extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(Brasileirao.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
     }//GEN-LAST:event_btnjg4ActionPerformed

@@ -29,14 +29,12 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
     public void mostrarIngressos(int idUsuario) {
         DefaultTableModel model = (DefaultTableModel) tabelaIngressos.getModel();
         model.setRowCount(0);
-
         Connection conexao = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
         try {
             conexao = ModuloConexao.conectar();
-
             String sql = "SELECT j.time_casa, j.time_visitante, j.estadio, j.campeonato, j.data, j.horario, j.preco FROM jogos j "
                     + "JOIN historico_ingressos h ON j.id = h.id_jogo "
                     + "WHERE h.id_usuario = ? AND j.data >= ?";
@@ -136,6 +134,7 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
 
     private void limparFiltro() {
         DefaultTableModel model = (DefaultTableModel) tabelaIngressos.getModel();
+        @SuppressWarnings("unchecked")
         TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) tabelaIngressos.getRowSorter();
         sorter.setRowFilter(null);
     }
@@ -198,7 +197,7 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seus ingressos dos próximos jogos");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corinthias", "Palmeiras", "São Paulo", "Brasileirão", "Libertadores" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buscar", "Corinthias", "Palmeiras", "São Paulo", "Brasileirão", "Libertadores" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
