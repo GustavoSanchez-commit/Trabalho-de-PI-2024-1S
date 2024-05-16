@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import model.ModuloConexao;
 
 public class TelaSeusIngressos extends javax.swing.JFrame {
-    
+
     int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
 
     public TelaSeusIngressos() {
@@ -31,8 +31,8 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
             conexao = ModuloConexao.conectar();
 
             String sql = "SELECT j.time_casa, j.time_visitante, j.estadio, j.campeonato, j.data, j.horario, j.preco FROM jogos j "
-                       + "JOIN historico_ingressos h ON j.id = h.id_jogo "
-                       + "WHERE h.id_usuario = ? AND j.data >= ?";
+                    + "JOIN historico_ingressos h ON j.id = h.id_jogo "
+                    + "WHERE h.id_usuario = ? AND j.data >= ?";
             pstmt = conexao.prepareStatement(sql);
             pstmt.setInt(1, idUsuario);
             pstmt.setString(2, LocalDate.now().toString());
@@ -57,6 +57,37 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
                 if (rs != null) {
                     rs.close();
                 }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void excluirIngresso(String timeVisitante, LocalDate dataJogo) {
+        Connection conexao = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conexao = ModuloConexao.conectar();
+            String sql = "DELETE FROM historico_ingressos WHERE id_usuario = ? AND id_jogo IN (SELECT id FROM jogos WHERE time_visitante = ? AND data = ?)";
+            pstmt = conexao.prepareStatement(sql);
+            pstmt.setInt(1, idUsuario);
+            pstmt.setString(2, timeVisitante);
+            pstmt.setDate(3, java.sql.Date.valueOf(dataJogo)); // Converte LocalDate para java.sql.Date
+            pstmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(this, "Ingresso reembolsado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Erro ao reembolsar o ingresso.", "Erro", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
                 if (pstmt != null) {
                     pstmt.close();
                 }
@@ -138,6 +169,11 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText(" Reembolsar?");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(51, 255, 51));
         jButton2.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -234,6 +270,19 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int selectedRow = tabelaIngressos.getSelectedRow();
+
+        if (selectedRow != -1) {
+            String timeVisitante = (String) tabelaIngressos.getValueAt(selectedRow, 1); 
+            LocalDate dataJogo = (LocalDate) tabelaIngressos.getValueAt(selectedRow, 4); 
+            excluirIngresso(timeVisitante, dataJogo);
+            mostrarIngressos(idUsuario);
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um ingresso para reembolsar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
