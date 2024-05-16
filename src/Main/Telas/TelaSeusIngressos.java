@@ -1,13 +1,18 @@
 package Main.Telas;
 
 import Main.VerificadorLogin;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import model.ModuloConexao;
 
 public class TelaSeusIngressos extends javax.swing.JFrame {
@@ -17,6 +22,8 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
     public TelaSeusIngressos() {
         initComponents();
         mostrarIngressos(idUsuario);
+        adicionarItemEmBranco();
+        adicionarListenerComboBox();
     }
 
     public void mostrarIngressos(int idUsuario) {
@@ -100,6 +107,39 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         }
     }
 
+    private void adicionarItemEmBranco() {
+        DefaultComboBoxModel<String> model = (DefaultComboBoxModel<String>) jComboBox1.getModel();
+        model.insertElementAt("", 0); // Adiciona um item vazio na primeira posiÃ§Ã£o
+    }
+
+    private void adicionarListenerComboBox() {
+        jComboBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String itemSelecionado = (String) jComboBox1.getSelectedItem();
+                if (!itemSelecionado.isEmpty()) {
+                    filtrarTabela(itemSelecionado);
+                } else {
+                    limparFiltro();
+                }
+            }
+        });
+    }
+
+    private void filtrarTabela(String item) {
+        DefaultTableModel model = (DefaultTableModel) tabelaIngressos.getModel();
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tabelaIngressos.setRowSorter(sorter);
+        RowFilter<Object, Object> rowFilter = RowFilter.regexFilter("(?i)" + item); // Ignora maiúsculas e minúsculas
+        sorter.setRowFilter(rowFilter);
+    }
+
+    private void limparFiltro() {
+        DefaultTableModel model = (DefaultTableModel) tabelaIngressos.getModel();
+        TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) tabelaIngressos.getRowSorter();
+        sorter.setRowFilter(null);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -158,7 +198,7 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seus ingressos dos próximos jogos");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corinthias", "Palmeiras", "São Paulo", "Brasileirão", "Libertadores" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -275,8 +315,8 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         int selectedRow = tabelaIngressos.getSelectedRow();
 
         if (selectedRow != -1) {
-            String timeVisitante = (String) tabelaIngressos.getValueAt(selectedRow, 1); 
-            LocalDate dataJogo = (LocalDate) tabelaIngressos.getValueAt(selectedRow, 4); 
+            String timeVisitante = (String) tabelaIngressos.getValueAt(selectedRow, 1);
+            LocalDate dataJogo = (LocalDate) tabelaIngressos.getValueAt(selectedRow, 4);
             excluirIngresso(timeVisitante, dataJogo);
             mostrarIngressos(idUsuario);
         } else {
