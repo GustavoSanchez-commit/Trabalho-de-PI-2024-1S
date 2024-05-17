@@ -197,7 +197,7 @@ public class TelaSeusIngressos extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seus ingressos dos próximos jogos");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buscar", "Corinthias", "Palmeiras", "São Paulo", "Brasileirão", "Libertadores" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buscar", "Brasileirão", "Libertadores", "Copa América", "Corinthians", "Palmeiras", "São Paulo", "Fortaleza", "Flamengo", "Bragantino", "Grêmio", "Chapecoense", "Atlético Mineiro", "Athletico Paranaense", "Peñarol", "Barcelona S.C", "River Plate", "Del Valle", "Bolivar", "Brasil", "Costa Rica", "Peru", "Chile", "Colômbia", "Paraguai", "Argentina", "Canadá", "Estados Unidos", "México", "Uruguai", "Bolívia", "Allianz Parque", "MorumBis", "Neo Química Arena", "Arena do Grêmio", "ArenaMRV", "Estadio Campeón", "Monumental de Núñez", "Hernando Siles Stadium", "Sofi Stadium", "AT&T Stadium", "NRG Stadium", "Mercedes-Benz Stadium" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
