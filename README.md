@@ -1,3 +1,4 @@
+![TelaPrincipal](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/23d6d57f-1e2a-465d-9cda-a132b54799aa)
 
 # Projeto: Plataforma de Compra de Ingressos para Jogos de Futebol Brasileiro
 O projeto destina-se a criar uma plataforma de compra de ingressos para jogos de futebol brasileiro. O objetivo principal é oferecer aos usuários uma maneira fácil e simples de comprar ingressos para jogos de futebol, utilizando tecnologias avançadas para garantir robustez e confiabilidade.
