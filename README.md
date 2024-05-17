@@ -4,7 +4,7 @@
 ![TelaPrincipal](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/23d6d57f-1e2a-465d-9cda-a132b54799aa)
 ![TelaEscolherCampeonato](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/ea1d7ada-a2ff-4770-a4a9-1295bb82167c)
 ![TelaBrasileirao](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/332ed827-b122-4f3f-8428-e88a9b3e8d5a)
-![TelaLibertadores](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/4d0f7580-bff0-4681-9184-d7998b7dc33a)
+![TelaLibertadores](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/4a65d587-e5f1-42f5-919d-710c80a48ecb)
 ![CopaAmerica](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/e87064de-1abb-4f69-9b5f-d2a9be197270)
 ![TelaSeusIngressos](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/12936484-ffc0-4b49-a37b-975551eaa84d)
 ![TelaSuaConta](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/08c19317-04eb-4fe3-b23a-2c295cb58909)
