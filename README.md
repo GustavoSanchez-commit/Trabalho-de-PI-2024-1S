@@ -1,6 +1,6 @@
 # Telas Do Projeto
-![TelaLogin](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/a9d18fc6-71b0-4003-bcfa-a9cf776ee926)
-![TelaRegistro](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/20af551c-7c05-4e34-b7a1-91f571840714)
+![TelaLogin](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/4a29553b-31ad-4e19-8a5e-77f22c5be087)
+![TelaRegistro](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/d855d90d-ea12-48e4-8b75-088260b87109)
 ![TelaPrincipal](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/23d6d57f-1e2a-465d-9cda-a132b54799aa)
 ![TelaEscolherCampeonato](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/ea1d7ada-a2ff-4770-a4a9-1295bb82167c)
 ![TelaBrasileirao](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/332ed827-b122-4f3f-8428-e88a9b3e8d5a)
