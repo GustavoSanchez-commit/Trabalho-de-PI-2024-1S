@@ -31,6 +31,11 @@ public class CopaAmerica extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        btnjg2 = new javax.swing.JButton();
+        btnjg3 = new javax.swing.JButton();
+        btnjg4 = new javax.swing.JButton();
+        btnjg5 = new javax.swing.JButton();
+        btnjg6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -92,6 +97,51 @@ public class CopaAmerica extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ingressos/ingreso UruguaixBolivia.png"))); // NOI18N
 
+        btnjg2.setBackground(new java.awt.Color(102, 255, 102));
+        btnjg2.setForeground(new java.awt.Color(0, 0, 0));
+        btnjg2.setText("Comprar");
+        btnjg2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjg2ActionPerformed(evt);
+            }
+        });
+
+        btnjg3.setBackground(new java.awt.Color(102, 255, 102));
+        btnjg3.setForeground(new java.awt.Color(0, 0, 0));
+        btnjg3.setText("Comprar");
+        btnjg3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjg3ActionPerformed(evt);
+            }
+        });
+
+        btnjg4.setBackground(new java.awt.Color(102, 255, 102));
+        btnjg4.setForeground(new java.awt.Color(0, 0, 0));
+        btnjg4.setText("Comprar");
+        btnjg4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjg4ActionPerformed(evt);
+            }
+        });
+
+        btnjg5.setBackground(new java.awt.Color(102, 255, 102));
+        btnjg5.setForeground(new java.awt.Color(0, 0, 0));
+        btnjg5.setText("Comprar");
+        btnjg5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjg5ActionPerformed(evt);
+            }
+        });
+
+        btnjg6.setBackground(new java.awt.Color(102, 255, 102));
+        btnjg6.setForeground(new java.awt.Color(0, 0, 0));
+        btnjg6.setText("Comprar");
+        btnjg6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjg6ActionPerformed(evt);
+            }
+        });
+
         jDesktopPane1.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -103,6 +153,11 @@ public class CopaAmerica extends javax.swing.JFrame {
         jDesktopPane1.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnjg2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnjg3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnjg4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnjg5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnjg6, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -121,13 +176,24 @@ public class CopaAmerica extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
                             .addComponent(jLabel6)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnjg1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                        .addGap(29, 29, Short.MAX_VALUE)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addComponent(btnjg5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(btnjg6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addComponent(btnjg1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(btnjg2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addComponent(btnjg3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(btnjg4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -146,28 +212,46 @@ public class CopaAmerica extends javax.swing.JFrame {
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))))
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
+                                .addGap(56, 56, 56)
                                 .addComponent(jLabel1))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(117, 117, 117)
-                                .addComponent(btnjg1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel6)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8)
-                        .addGap(26, 26, 26))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnjg1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnjg2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(78, 78, 78)))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7)
-                        .addGap(28, 28, 28)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnjg3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnjg4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(jLabel8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnjg5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnjg6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46))))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9)
-                        .addGap(66, 66, 66))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9)))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,6 +306,126 @@ public class CopaAmerica extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnjg1ActionPerformed
+
+    private void btnjg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg2ActionPerformed
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$110,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 6, 24);
+            LocalTime horario = LocalTime.of(19, 0);
+            Jogos jogo12 = new Jogos(data, horario, "Copa América", "R$110", "NRG Stadium", "Colômbia", "Paraguai");
+
+            // Obtém o ID do usuário logado
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo12, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnjg2ActionPerformed
+
+    private void btnjg3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg3ActionPerformed
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$126,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 6, 21);
+            LocalTime horario = LocalTime.of(21, 0);
+            Jogos jogo13 = new Jogos(data, horario, "Copa América", "R$126", "AT&T Stadium", "Peru", "Chile");
+
+            // Obtém o ID do usuário logado
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo13, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnjg3ActionPerformed
+
+    private void btnjg4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg4ActionPerformed
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$189,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 6, 20);
+            LocalTime horario = LocalTime.of(19, 0);
+            Jogos jogo14 = new Jogos(data, horario, "Copa América", "R$189", "Mercedes-Benz Stadium", "Argentina", "Canadá");
+
+            // Obtém o ID do usuário logado
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo14, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnjg4ActionPerformed
+
+    private void btnjg5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg5ActionPerformed
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$180,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 6, 23);
+            LocalTime horario = LocalTime.of(19, 0);
+            Jogos jogo15 = new Jogos(data, horario, "Copa América", "R$180", "Mercedes-Benz Stadium", "Estados Unidos", "México");
+
+            // Obtém o ID do usuário logado
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo15, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnjg5ActionPerformed
+
+    private void btnjg6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjg6ActionPerformed
+        String[] opcoes = {"Pix", "Cartão", "Boleto"};
+        String opcaoSelecionada = (String) JOptionPane.showInputDialog(null, "Valor R$156,00 \n Selecione o método de pagamento:", "Método de Pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
+
+        if (opcaoSelecionada != null) {
+            LocalDate data = LocalDate.of(2024, 6, 27);
+            LocalTime horario = LocalTime.of(18, 0);
+            Jogos jogo16 = new Jogos(data, horario, "Copa América", "R$159", "Mercedes-Benz Stadium", "Uruguai", "Bolívia");
+
+            // Obtém o ID do usuário logado
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            try {
+                if (ConexaoBD.inserirJogo(jogo16, idUsuario)) {
+                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnjg6ActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -258,6 +462,11 @@ public class CopaAmerica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnjg1;
+    private javax.swing.JButton btnjg2;
+    private javax.swing.JButton btnjg3;
+    private javax.swing.JButton btnjg4;
+    private javax.swing.JButton btnjg5;
+    private javax.swing.JButton btnjg6;
     private javax.swing.JButton jButton2;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
