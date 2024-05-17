@@ -1,4 +1,13 @@
+# Telas Do Projeto
+![TelaLogin](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/a9d18fc6-71b0-4003-bcfa-a9cf776ee926)
+![TelaRegistro](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/20af551c-7c05-4e34-b7a1-91f571840714)
 ![TelaPrincipal](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/23d6d57f-1e2a-465d-9cda-a132b54799aa)
+![TelaEscolherCampeonato](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/ea1d7ada-a2ff-4770-a4a9-1295bb82167c)
+![TelaBrasileirao](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/332ed827-b122-4f3f-8428-e88a9b3e8d5a)
+![TelaLibertadores](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/4d0f7580-bff0-4681-9184-d7998b7dc33a)
+![CopaAmerica](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/e87064de-1abb-4f69-9b5f-d2a9be197270)
+![TelaSeusIngressos](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/12936484-ffc0-4b49-a37b-975551eaa84d)
+![TelaSuaConta](https://github.com/SanchezPrograming/Trabalho-de-PI-2024-1S/assets/127356014/08c19317-04eb-4fe3-b23a-2c295cb58909)
 
 # Projeto: Plataforma de Compra de Ingressos para Jogos de Futebol Brasileiro
 O projeto destina-se a criar uma plataforma de compra de ingressos para jogos de futebol brasileiro. O objetivo principal é oferecer aos usuários uma maneira fácil e simples de comprar ingressos para jogos de futebol, utilizando tecnologias avançadas para garantir robustez e confiabilidade.
