@@ -13,3 +13,4 @@ public class ModuloConexao {
         return DriverManager.getConnection(url, usuario, senha);
     }
 }
+    

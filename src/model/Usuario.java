@@ -1,6 +1,4 @@
-
 package model;
-
 
 public class Usuario {
     private int id;
@@ -32,4 +30,27 @@ public class Usuario {
     public String getPerfil() {
         return perfil;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+    
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", username=" + username + ", senha=" + senha + ", perfil=" + perfil + '}';
+    }
+    
 }

@@ -9,7 +9,7 @@ import model.ModuloConexao;
 import model.Usuario;
 
 public class VerificadorLogin {
-    private static Usuario usuarioLogado; 
+    public static Usuario usuarioLogado; 
 
     public static Usuario verificarLogin(String username, String senha) {
         Connection conexao = null;
