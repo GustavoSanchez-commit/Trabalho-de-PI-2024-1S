@@ -6,7 +6,6 @@ public class Usuario {
     private String senha;
     private String perfil;
 
-    // Construtor
     public Usuario(int id, String username, String senha, String perfil) {
         this.id = id;
         this.username = username;
@@ -14,7 +13,6 @@ public class Usuario {
         this.perfil = perfil;
     }
 
-    // Getters
     public int getId() {
         return id;
     }

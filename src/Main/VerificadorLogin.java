@@ -24,8 +24,6 @@ public class VerificadorLogin {
             pstmt.setString(1, username);
             pstmt.setString(2, senha);
             rs = pstmt.executeQuery();
-
-            // Verifica se há um próximo registro no ResultSet
             if (rs.next()) {
                 int id = rs.getInt("id");
                 String perfil = rs.getString("perfil");
@@ -43,7 +41,6 @@ public class VerificadorLogin {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // Se ocorrer alguma exceção ou não, garanta que os recursos sejam fechados
             try {
                 if (rs != null) {
                     rs.close();
@@ -59,15 +56,14 @@ public class VerificadorLogin {
             }
         }
 
-        return null; // Retorna null se o login falhar
+        return null; 
     }
 
-   
     public static Usuario getUsuarioLogado() {
         return usuarioLogado;
     }
 
-    public static void setUsuarioLogado(Usuario aUsuarioLogado) {
+        public static void setUsuarioLogado(Usuario aUsuarioLogado) {
         usuarioLogado = aUsuarioLogado;
     }
 }

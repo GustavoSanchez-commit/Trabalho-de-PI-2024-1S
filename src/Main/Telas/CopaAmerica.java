@@ -3,18 +3,12 @@ package Main.Telas;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import javax.swing.JOptionPane;
-import Main.VerificadorLogin;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.Usuario;
 
 public class CopaAmerica extends javax.swing.JFrame {
-
     public CopaAmerica() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -291,19 +285,7 @@ public class CopaAmerica extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 24);
             LocalTime horario = LocalTime.of(22, 0);
             Jogos jogo11 = new Jogos(data, horario, "Copa América", "R$200", "SoFi Stadium", "Brasil", "Costa Rica");
-
-            // Obtém o ID do usuário logado
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-
-            try {
-                if (ConexaoBD.inserirJogo(jogo11, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo11, opcaoSelecionada);
         }
     }//GEN-LAST:event_btnjg1ActionPerformed
 
@@ -315,19 +297,7 @@ public class CopaAmerica extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 24);
             LocalTime horario = LocalTime.of(19, 0);
             Jogos jogo12 = new Jogos(data, horario, "Copa América", "R$110", "NRG Stadium", "Colômbia", "Paraguai");
-
-            // Obtém o ID do usuário logado
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-
-            try {
-                if (ConexaoBD.inserirJogo(jogo12, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo12, opcaoSelecionada);
         }
     }//GEN-LAST:event_btnjg2ActionPerformed
 
@@ -339,19 +309,7 @@ public class CopaAmerica extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 21);
             LocalTime horario = LocalTime.of(21, 0);
             Jogos jogo13 = new Jogos(data, horario, "Copa América", "R$126", "AT&T Stadium", "Peru", "Chile");
-
-            // Obtém o ID do usuário logado
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-
-            try {
-                if (ConexaoBD.inserirJogo(jogo13, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo13, opcaoSelecionada);
         }
     }//GEN-LAST:event_btnjg3ActionPerformed
 
@@ -363,19 +321,7 @@ public class CopaAmerica extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 20);
             LocalTime horario = LocalTime.of(19, 0);
             Jogos jogo14 = new Jogos(data, horario, "Copa América", "R$189", "Mercedes-Benz Stadium", "Argentina", "Canadá");
-
-            // Obtém o ID do usuário logado
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-
-            try {
-                if (ConexaoBD.inserirJogo(jogo14, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo14, opcaoSelecionada);
         }
     }//GEN-LAST:event_btnjg4ActionPerformed
 
@@ -387,19 +333,7 @@ public class CopaAmerica extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 23);
             LocalTime horario = LocalTime.of(19, 0);
             Jogos jogo15 = new Jogos(data, horario, "Copa América", "R$180", "Mercedes-Benz Stadium", "Estados Unidos", "México");
-
-            // Obtém o ID do usuário logado
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-
-            try {
-                if (ConexaoBD.inserirJogo(jogo15, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo15, opcaoSelecionada);
         }
     }//GEN-LAST:event_btnjg5ActionPerformed
 
@@ -411,19 +345,7 @@ public class CopaAmerica extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 6, 27);
             LocalTime horario = LocalTime.of(18, 0);
             Jogos jogo16 = new Jogos(data, horario, "Copa América", "R$159", "Mercedes-Benz Stadium", "Uruguai", "Bolívia");
-
-            // Obtém o ID do usuário logado
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-
-            try {
-                if (ConexaoBD.inserirJogo(jogo16, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(CopaAmerica.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo16, opcaoSelecionada);
         }
     }//GEN-LAST:event_btnjg6ActionPerformed
     

@@ -1,14 +1,8 @@
-
 package Main.Telas;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import javax.swing.JOptionPane;
-import Main.VerificadorLogin;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.Usuario;
 
 public class Libertadores extends javax.swing.JFrame {
     public Libertadores() {
@@ -225,16 +219,7 @@ public class Libertadores extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 5, 14);
             LocalTime horario = LocalTime.of(19, 0);
             Jogos jogo7 = new Jogos(data, horario, "Libertadores", "R$70", "Estadio Campeón del Siglo", "Penãrol", "Atlético Mineiro");
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-            try {
-                if (ConexaoBD.inserirJogo(jogo7, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo7, opcaoSelecionada);
         }   
     }//GEN-LAST:event_btnjg1ActionPerformed
 
@@ -255,16 +240,7 @@ public class Libertadores extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 4, 17);
             LocalTime horario = LocalTime.of(19, 30);
             Jogos jogo10 = new Jogos(data, horario, "Libertadores", "R$65", "Hernando Siles Stadium", "Bolivar", "Flamengo");
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-            try {
-                if (ConexaoBD.inserirJogo(jogo10, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo10, opcaoSelecionada);
         } 
     }//GEN-LAST:event_btnjg2ActionPerformed
 
@@ -276,16 +252,7 @@ public class Libertadores extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 5, 29);
             LocalTime horario = LocalTime.of(21, 30);
             Jogos jogo9 = new Jogos(data, horario, "Libertadores", "R$90", "MorumBIS", "São Paulo", "Barcelona S.C");
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-            try {
-                if (ConexaoBD.inserirJogo(jogo9, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo9, opcaoSelecionada);
         } 
     }//GEN-LAST:event_btnjg3ActionPerformed
 
@@ -297,16 +264,7 @@ public class Libertadores extends javax.swing.JFrame {
             LocalDate data = LocalDate.of(2024, 5, 29);
             LocalTime horario = LocalTime.of(21, 30);
             Jogos jogo8 = new Jogos(data, horario, "Libertadores", "R$40", "Monumental de Núñez", "River Plate", "Dell Valle");
-            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
-            try {
-                if (ConexaoBD.inserirJogo(jogo8, idUsuario)) {
-                    JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + opcaoSelecionada + ". Verifique seu ingresso em 'Seus ingressos'");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Libertadores.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Jogos.adicionar(jogo8, opcaoSelecionada);
         } 
     }//GEN-LAST:event_btnjg4ActionPerformed
 

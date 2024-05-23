@@ -1,7 +1,12 @@
 package Main.Telas;
 
+import Main.VerificadorLogin;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Jogos {
     private LocalDate data;
@@ -75,5 +80,23 @@ public class Jogos {
 
     public void setCampeonato(String campeonato) {
         this.campeonato = campeonato;
+    }
+
+    @Override
+    public String toString() {
+        return "Jogos{" + "data=" + data + ", horario=" + horario + ", preco=" + preco + ", estadio=" + estadio + ", timeCasa=" + timeCasa + ", timeVisitante=" + timeVisitante + ", campeonato=" + campeonato + '}';
+    }
+    public static void adicionar(Jogos jogo, String metodoPagamento) {
+        try {
+            int idUsuario = VerificadorLogin.getUsuarioLogado().getId();
+
+            if (ConexaoBD.inserirJogo(jogo, idUsuario)) {
+                JOptionPane.showMessageDialog(null, "Pagamento Concluído com " + metodoPagamento + ". Verifique seu ingresso em 'Seus ingressos'");
+            } else {
+                JOptionPane.showMessageDialog(null, "Erro no Pagamento.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Jogos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
