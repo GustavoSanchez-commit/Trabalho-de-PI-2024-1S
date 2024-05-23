@@ -8,7 +8,7 @@ public class ModuloConexao {
     public static Connection conectar() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/bancoPi";
         String usuario = "root";
-        String senha = "2127";
+        String senha = "";
 
         return DriverManager.getConnection(url, usuario, senha);
     }
