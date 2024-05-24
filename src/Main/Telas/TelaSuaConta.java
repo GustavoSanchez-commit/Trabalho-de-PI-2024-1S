@@ -185,7 +185,7 @@ public class TelaSuaConta extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Time Casa", "Time Visitante", "Estadio", "Campeonato", "Data", "Horario"
+                "Data", "Horario", "Campeonato", "Estadio", "Time Casa", "Time Visitante"
             }
         ));
         jScrollPane1.setViewportView(tabelaHistorico);
